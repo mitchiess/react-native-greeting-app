@@ -1,0 +1,62 @@
+=== React Native Greeting App — Program Output ===
+Component: GreetingScreen.jsx
+Logic tested via: handleNameChange() and handleGreet() functions
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TEST 1: Empty input — button pressed with no name entered
+─────────────────────────────────────────────────────────
+Input value  : ""
+Error shown  : Please enter your name before continuing.
+Greeting     : (not shown)
+Result       : PASS ✓ — validation correctly blocks empty submission
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TEST 2: User starts typing — error clears immediately
+──────────────────────────────────────────────────────
+Input value  : "Maria"
+Error cleared: yes
+Result       : PASS ✓ — error dismissed as soon as input begins
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TEST 3: Valid name submitted — greeting displayed
+──────────────────────────────────────────────────
+Input value  : "Maria"
+Error shown  : (none)
+Greeting     : Hello, Maria! Welcome to the app.
+Result       : PASS ✓ — personalized greeting rendered correctly
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TEST 4: Whitespace-only input — treated as empty
+─────────────────────────────────────────────────
+Input value  : "   "
+Error shown  : Please enter your name before continuing.
+Greeting     : (not shown)
+Result       : PASS ✓ — name.trim() correctly rejects spaces-only
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TEST 5: Name with leading/trailing spaces — trimmed in output
+──────────────────────────────────────────────────────────────
+Input value  : "  John  "
+Greeting     : Hello, John! Welcome to the app.
+Result       : PASS ✓ — name.trim() strips extra whitespace before greeting
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SUMMARY
+───────
+Total Tests : 5
+Passed      : 5
+Failed      : 0
+
+All features working correctly:
+  [✓] TextInput accepts user name
+  [✓] Button triggers greeting on valid input
+  [✓] Error message shown when input is empty
+  [✓] Error clears when user starts typing
+  [✓] Whitespace-only input rejected
+  [✓] Name trimmed before displaying greeting
